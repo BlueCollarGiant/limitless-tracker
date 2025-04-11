@@ -1,0 +1,16 @@
+<ul>
+  @for (task of tasks(); track task.id) {
+    <li>
+      <span [appStrikeThrough]="task.completed()">
+      {{task.name}}
+    </span>
+    - {{task.completed() ? '✅ Done' : '🕓 Pending' }}
+      <button *ngIf="!task.completed()" (click)="taskService.toggleTaskCompletion(task)">
+        Complete
+      </button>
+    </li>
+  }
+</ul>
+
+
+<p *appEmptyState= "tasks">No tasks available</p>

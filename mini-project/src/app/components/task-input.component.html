@@ -1,0 +1,10 @@
+<form (ngSubmit)="onSubmit()" #taskForm="ngForm">
+  <input
+    type="text"
+    [(ngModel)]="taskName"
+    name="taskName"
+    required
+    placeholder="Enter a task"
+  />
+  <button type="submit">Add Task</button>
+</form>
